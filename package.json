@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "",
-    "install": "npm install --save express && npm install --save handlebard && npm install --save express-handlebars"
+    "install": "npm install --save express && npm install --save handlebars && npm install --save express-handlebars"
   },
   "repository": {
     "type": "git",
