@@ -21,8 +21,17 @@ res.render('test', {});
 });
 
 app.get('/:fileName', function (req, res, next){
-var fileName = req.params.fileName.toLowerCase();
-res.sendFile(__dirname + '/public/' + fileName);
+  var fileName = req.params.fileName.toLowerCase();
+  console.log(fileName);
+
+  if(fileName == 'favicon.ico' || fileName == 'logo.jpg'){
+    res.sendFile(__dirname + '/public/logo.jpg');
+  }
+  else if(fileName == 'style.css'){
+    res.sendFile(__dirname + '/public/style.css');
+}
+next();
+
 });
 
 
