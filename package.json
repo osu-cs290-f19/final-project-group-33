@@ -4,11 +4,14 @@
   "description": "Final Project",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.3"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "",
+    "install": "npm install --save express && npm install --save handlebard && npm install --save express-handlebars"
   },
   "repository": {
     "type": "git",
