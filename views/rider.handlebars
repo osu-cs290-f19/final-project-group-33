@@ -53,8 +53,12 @@
               </div>
             </div>
           </div>
-          
-    <h2 class="header">Posts</h2>
-    <div class="posts-container">
-    </div>
+
+          <h2 class="header">Posts</h2>
+            <section id="posts-container">
+              {{#each posts}}
+              {{> postTemplate}}
+            {{/each}}
+            </section>
+
 </main>
