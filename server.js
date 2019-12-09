@@ -3,7 +3,27 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 
 var app = express();
-var port = 3202;
+var port = 3712;
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+app.use(express.static('public'));
+
+app.use('*', function (req, res, next){
+  console.log(req.url);
+  next();
+});
+
+app.get('/', function (req, res, next){
+console.log("main");
+res.render('test', {});
+});
+
+app.get('/:fileName', function (req, res, next){
+var fileName = req.params.fileName.toLowerCase();
+res.sendFile(__dirname + '/public/' + fileName);
+});
 
 
 app.listen(port, function (err) {
@@ -13,7 +33,4 @@ app.listen(port, function (err) {
     console.log("== Server listening on port", port);
   });
 
-app.get('/', function (req, res, next){
-  res.sendFile(__dirname + /public/ + 'index.html');
 
-});
