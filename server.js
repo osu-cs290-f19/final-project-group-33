@@ -10,14 +10,15 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-app.use('*', function (req, res, next){
+
+app.get('*', function (req, res, next){
   console.log(req.url);
   next();
 });
 
 app.get('/', function (req, res, next){
-console.log("main");
-res.render('test', {});
+  console.log("= main page");
+  res.render('driver');
 });
 
 app.get('/:fileName', function (req, res, next){
@@ -25,13 +26,18 @@ app.get('/:fileName', function (req, res, next){
   console.log(fileName);
 
   if(fileName == 'favicon.ico' || fileName == 'logo.jpg'){
-    res.sendFile(__dirname + '/public/logo.jpg');
+    res.status(200).sendFile(__dirname + '/public/logo.jpg');
   }
   else if(fileName == 'style.css'){
-    res.sendFile(__dirname + '/public/style.css');
+    res.status(200).sendFile(__dirname + '/public/style.css');
 }
 next();
 
+});
+
+app.get('*', function (req, res, next){
+  console.log("404");
+  res.sendStatus(404);
 });
 
 
@@ -40,6 +46,6 @@ app.listen(port, function (err) {
       throw err;
     }
     console.log("== Server listening on port", port);
-  });
+});
 
 
