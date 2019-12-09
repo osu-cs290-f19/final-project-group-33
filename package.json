@@ -12,7 +12,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "",
-    "install": "npm install --save express && npm install --save handlebars && npm install --save express-handlebars"
+    "build": "npm install --save express && npm install --save handlebars && npm install --save express-handlebars"
   },
   "repository": {
     "type": "git",
