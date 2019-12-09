@@ -12,3 +12,8 @@ app.listen(port, function (err) {
     }
     console.log("== Server listening on port", port);
   });
+
+app.get('/', function (req, res, next){
+  res.sendFile(__dirname + /public/ + 'index.html');
+
+});
