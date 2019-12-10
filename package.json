@@ -1,4 +1,4 @@
-{ 
+{
   "name": "final-project-group-33",
   "version": "1.0.0",
   "description": "Final Project",
@@ -15,7 +15,7 @@
     "start": "node server.js",
     "create": "handlebars -f public/postTemplate.js views/partials/postTemplate.handlebars",
     "prestart": "npm run create && hostname",
-    "build": "npm install --save express && npm install --save handlebars && npm install --save express-handlebars"
+    "build": "npm install --save express && npm install --save handlebars && npm install --save express-handlebars && npm install --save body-parser"
   },
   "repository": {
     "type": "git",
