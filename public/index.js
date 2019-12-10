@@ -1,4 +1,5 @@
 function insertNewPost(name, license, car, time, date, start, end, isDriver) {
+  console.log("create new post");
   var postHTML = Handlebars.templates.postTemplate({
     name: name,
     license: license,
@@ -14,4 +15,7 @@ function insertNewPost(name, license, car, time, date, start, end, isDriver) {
   var postsContainer = document.getElementById('posts-container');
   postsContainer.insertAdjacentHTML('beforeend', postHTML);
   // return postHTML;
-  }
+}
+
+var createButton = document.getElementById('create');
+createButton.addEventListener('click', insertNewPost);

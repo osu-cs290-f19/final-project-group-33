@@ -1,4 +1,4 @@
-{
+{ 
   "name": "final-project-group-33",
   "version": "1.0.0",
   "description": "Final Project",
@@ -8,11 +8,11 @@
     "express-handlebars": "^3.1.0",
     "handlebars": "^4.5.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+
+  },
   "scripts": {
     "start": "node server.js",
-    "test": "",
-    "dev": "nodemon server.js",
     "create": "handlebars -f public/postTemplate.js views/partials/postTemplate.handlebars",
     "prestart": "npm run create",
     "build": "npm install --save express && npm install --save handlebars && npm install --save express-handlebars"
