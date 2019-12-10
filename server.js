@@ -28,6 +28,12 @@ app.get('/:fileName', function (req, res, next){
   if(fileName == 'favicon.ico'){
     res.status(200).sendFile(__dirname + '/public/logo.jpg');
   }
+  else if(fileName == 'driver'){
+    res.render('driver');
+  }
+  else if(fileName == 'rider'){
+    res.render('rider');
+  }
   
   next();
 
