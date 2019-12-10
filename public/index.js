@@ -35,9 +35,64 @@ function insertNewPost(name, license, car, time, date, start, end, isDriver) {
   // return postHTML;
 }
 
-function filter(){
-  console.log("filtering");
+// function filter(event){
+//   console.log("filtering");
+//   var startFilter = document.getElementById('filter-start').value.toLowerCase();
+//   var endFilter = document.getElementById('filter-end').value.toLowerCase();
+//   var dateFilter = document.getElementById('filter-date').value;
+//
+//   console.log(startFilter, endFilter, dateFilter);
+//
+//
+//   // var posts = document.getElementsByClassName('post-container');
+//   var postStart = document.getElementsByClassName('Start Location');
+//   var postEnd = document.getElementsByClassName('Destination Location');
+//   var postDate = document.getElementsByClassName('Date');
+//   // var postsData = posts.getElementsByClassName('post');
+//
+//   // console.log(posts);
+//   console.log(postStart[0].dataset.start);
+//
+// }
+
+function filter() {
+
+  /*
+   * Grab values of filters from user inputs.
+   */
+  var filters = {
+    start: document.getElementById('filter-start').value,
+    end: document.getElementById('filter-end').value,
+    date: document.getElementById('filter-date').value,
+  }
+
+  var filterConditionCheckedInputs = document.querySelectorAll("#filter-condition input:checked");
+  for (var i = 0; i < filterConditionCheckedInputs.length; i++) {
+    filters.conditions.push(filterConditionCheckedInputs[i].value);
+  }
+
+  /*
+   * Remove all "post" elements from the DOM.
+   */
+  var postContainer = document.getElementsByClassName('post-container');
+  while(postContainer.lastChild) {
+    postContainer.removeChild(postContainer.lastChild);
+  }
+
+  /*
+   * Loop through the collection of all "post" elements and re-insert ones
+   * that meet the current filtering criteria.
+   */
+  allPosts.forEach(function (post) {
+    if (postPassesFilters(post, filters)) {
+      insertNewPost(post.description, post.photoURL, post.price, post.city, post.condition);
+    }
+  });
+
 }
+
+function passFilter(post, filters)
+
 
 var createButton = document.getElementById('create');
 if (createButton){
@@ -49,10 +104,3 @@ var filterButton = document.getElementById('filter-update-button');
 if (filterButton){
   filterButton.addEventListener('click', filter);
 }
-function addPostToJSON(name, license, car, time, date, start, end, isDriver){
-  var post = {"name": name, "license": license, "car":car, "time":time, "date":date, "start":start, "end":end, "isDriver":isDriver};
-  fs.appendFile("./postData.json", post, function (err) {
-  if (err) throw err;
-  console.log('Updated!');
-});
-};
