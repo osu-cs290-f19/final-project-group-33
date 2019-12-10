@@ -1,33 +1,66 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0px;
+}
 
 a {
-    text-decoration: none;
-    color: #f67811;
-  }
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  height: 250px;
+}
+
+header a {
+  position: absolute;
+  left: 300px;
+  top: 100px;
+  color: #fff;
+}
+
+.site-title {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 80px;
+  font-weight: 100;
+  margin: 0 0 0 20px;
+  padding-top: 30px;
+}
+
+.header-image-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-image-container img {
+  float: left;
+  max-height: 250px;
+  margin: 0 15px 0 0;
   
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  header {
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  
-  header a {
-    color: #fff;
-  }
-  
-  .main-title {
-    font-family: serif;
-    font-size: 80px;
-    font-weight: 100;
-    margin: 0 0 0 20px;
-    padding-top: 30px;
-    color: #fff;
-  }
-  
-  .main-title a:hover {
-    text-decoration: none;
-  }
+}
+
+.error-container{
+  text-align: center;
+}
+
+.error-container h2{
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.error-container h3{
+  font-size: 30px;
+}

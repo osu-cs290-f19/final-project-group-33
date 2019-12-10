@@ -44,7 +44,7 @@ app.get('/:fileName', function (req, res, next){
 
 app.get('*', function (req, res, next){
   console.log("404");
-  res.sendStatus(404);
+  res.status(404).render('404', {path : req.url});
 });
 
 

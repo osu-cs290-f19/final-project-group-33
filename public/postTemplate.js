@@ -1,21 +1,15 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['postTemplate'] = template({"1":function(container,depth0,helpers,partials,data) {
+templates['postTemplate'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression;
-
-  return "    <div class = \"License\">\n      "
-    + alias4(((helper = (helper = helpers.license || (depth0 != null ? depth0.license : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"license","hash":{},"data":data,"loc":{"start":{"line":8,"column":6},"end":{"line":8,"column":17}}}) : helper)))
-    + "\n    </div>\n    <div class = \"Car\">\n      "
-    + alias4(((helper = (helper = helpers.car || (depth0 != null ? depth0.car : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"car","hash":{},"data":data,"loc":{"start":{"line":11,"column":6},"end":{"line":11,"column":13}}}) : helper)))
-    + "\n    </div>\n\n";
-},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<div class = \"post-container\">\n  <div class = \"Name\">\n    "
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":3,"column":4},"end":{"line":3,"column":12}}}) : helper)))
-    + "\n  </div>\n\n"
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.isDriver : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":6,"column":2},"end":{"line":14,"column":9}}})) != null ? stack1 : "")
-    + "  <div class = \"Time\">\n    "
+    + "\n  </div>\n\n\n  <div class = \"License\">\n    "
+    + alias4(((helper = (helper = helpers.license || (depth0 != null ? depth0.license : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"license","hash":{},"data":data,"loc":{"start":{"line":8,"column":4},"end":{"line":8,"column":15}}}) : helper)))
+    + "\n  </div>\n  <div class = \"Car\">\n    "
+    + alias4(((helper = (helper = helpers.car || (depth0 != null ? depth0.car : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"car","hash":{},"data":data,"loc":{"start":{"line":11,"column":4},"end":{"line":11,"column":11}}}) : helper)))
+    + "\n  </div>\n\n\n  <div class = \"Time\">\n    "
     + alias4(((helper = (helper = helpers.time || (depth0 != null ? depth0.time : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"time","hash":{},"data":data,"loc":{"start":{"line":16,"column":4},"end":{"line":16,"column":12}}}) : helper)))
     + "\n  </div>\n\n  <div class = \"Date\">\n    "
     + alias4(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data,"loc":{"start":{"line":20,"column":4},"end":{"line":20,"column":12}}}) : helper)))

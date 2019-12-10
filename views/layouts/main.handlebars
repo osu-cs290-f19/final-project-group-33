@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>CS 290 Final Project</title>
         <link rel="stylesheet" href="./style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Oxygen&display=swap" rel="stylesheet"> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.runtime.js"></script>
         <script src="/postTemplate.js" defer></script>
         <script src="/index.js" defer></script>
@@ -13,8 +14,11 @@
     <body>
 
         <header>
-            <img src="./logo.jpg" alt="Failed to Load">
-            <h1 class="main-title">Corvallis LFG</h1>
+            {<div class="header-image-container">
+                <img src="./logo.jpg" alt="Page Logo">
+            </div>
+            
+            <h1 class="site-title"><a href="#">Corvallis LFG</a></h1>}
         </header>
 
         {{{body}}}
