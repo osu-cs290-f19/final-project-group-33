@@ -1,5 +1,8 @@
 
+
 allPosts = [];
+
+
 
 function generatePosts(){
   console.log("hello");
@@ -113,8 +116,6 @@ function insertNewPost2(name, license, car, time, date, start, end) {
     var postsContainer = document.getElementById('posts-container');
     postsContainer.insertAdjacentHTML('beforeend', postHTML);
 
-
-  // return postHTML;
 }
 
 // function filter(event){
@@ -208,12 +209,15 @@ function passFilter(post, filters){
 
 }
 
+var deleteButton = document.getElementsByClassName('delete-button');
+for (i=0; i<deleteButton.length; i++){
+  deleteButton[i].addEventListener('click', function(e){e.currentTarget.parentNode.parentNode.remove();});
+}
 
 var createButton = document.getElementById('create');
 if (createButton){
   createButton.addEventListener('click', insertNewPost);
 }
-
 
 var filterButton = document.getElementById('filter-update-button');
 if (filterButton){

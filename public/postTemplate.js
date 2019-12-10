@@ -31,6 +31,6 @@ templates['postTemplate'] = template({"compiler":[8,">= 4.3.0"],"main":function(
     + alias4(((helper = (helper = helpers.end || (depth0 != null ? depth0.end : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end","hash":{},"data":data,"loc":{"start":{"line":27,"column":47},"end":{"line":27,"column":54}}}) : helper)))
     + "\">\n    <span class=\"tag\">Destination:</span>"
     + alias4(((helper = (helper = helpers.end || (depth0 != null ? depth0.end : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end","hash":{},"data":data,"loc":{"start":{"line":28,"column":41},"end":{"line":28,"column":48}}}) : helper)))
-    + "\n  </div>\n\n\n</div>\n";
+    + "\n  </div>\n\n  <div class=\"delete\">\n    <button type=\"button\" id=\"delete-this\" class=\"delete-button\">Delete Post</button>\n  </div>\n\n</div>\n";
 },"useData":true});
 })();

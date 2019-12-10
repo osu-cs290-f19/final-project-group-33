@@ -54,13 +54,58 @@ header a {
   float: left;
   max-height: 250px;
   margin: 0 15px 0 0;
-  
+
 }
 
 .error-container{
   text-align: center;
 }
 
+.questions-container{
+  display: flex;
+  /* height: 100px; */
+  justify-content: center;
+  flex-wrap:wrap;
+  background-color: #000;
+  border-color: black;
+  border-width: 3px;
+  margin: 5px;
+  padding: 5px;
+}
+.first-row{
+  display:flex;
+  justify-content: center;
+  width:100%;
+}
+
+.second-row{
+  display:flex;
+  justify-content: center;
+  width:100%;
+}
+.question-input-element{
+  width:100%;
+ margin-right: 5px;
+}
+.question-input{
+  width: 100%;
+  padding:1px;
+  margin:1px 5px 2px -3px;
+  height: 20px;
+  border-radius: 5px;
+}
+.questions-input-container{
+  /* display: inline-box; */
+  /* box-sizing: border-box; */
+width: 100%;
+border: solid #df4403 2px;
+border-radius: 5px;
+padding: 8px;
+margin: 5px;
+  /* display: inline-block; */
+  /* border-color: #000; */
+  background-color: #eee;
+}
 h2{
   font-size: 60px;
   font-weight: 700;
