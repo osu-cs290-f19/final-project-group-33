@@ -8,6 +8,11 @@ a {
   text-decoration: none;
 }
 
+header a:hover{
+  text-decoration: none;
+  color: rgb(228, 209, 187);
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -74,12 +79,29 @@ h3{
 
 #menu-container{
   width: 100%;
-  flex: row;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#menu-container a{
+  color: black;
 }
 
 #menu-item{
   width: 400px;
   height: 150px;
   background-color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#menu-item h3{
+  margin-top: auto;
+  margin-bottom: auto;
 }
