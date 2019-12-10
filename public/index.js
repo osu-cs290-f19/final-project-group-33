@@ -21,3 +21,11 @@ function insertNewPost(name, license, car, time, date, start, end, isDriver) {
 
 var createButton = document.getElementById('create');
 createButton.addEventListener('click', insertNewPost);
+
+function addPostToJSON(name, license, car, time, date, start, end, isDriver){
+  var post = {"name": name, "license": license, "car":car, "time":time, "date":date, "start":start, "end":end, "isDriver":isDriver};
+  fs.appendFile("postData.json", post, function (err) {
+  if (err) throw err;
+  console.log('Updated!');
+});
+};
