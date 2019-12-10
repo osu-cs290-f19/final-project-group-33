@@ -105,3 +105,23 @@ h3{
   margin-top: auto;
   margin-bottom: auto;
 }
+
+.post-container{
+  border-style: solid;
+  border-width: 2px;
+  margin: 10px;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  border-color: #aaa;
+  padding: 5px;
+}
+
+.post-container div{
+  margin-bottom: 5px;
+}
+
+.post-container .tag{
+  display: inherit;
+  width: 100%;
+}

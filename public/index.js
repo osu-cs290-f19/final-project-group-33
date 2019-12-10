@@ -13,13 +13,13 @@ function generatePosts(){
 
   for (i=0; i < nameData.length; i++){
     allPosts.push({
-      name: nameData[i].textContent,
-      license: licenseData[i].textContent,
-      car: carData[i].textContent,
-      time: timeData[i].textContent,
-      date: dateData[i].textContent,
-      start: startData[i].textContent,
-      end: endData[i].textContent
+      name: nameData[i].dataset.n,
+      license: licenseData[i].dataset.l,
+      car: carData[i].dataset.c,
+      time: timeData[i].dataset.t,
+      date: dateData[i].dataset.d,
+      start: startData[i].dataset.s,
+      end: endData[i].dataset.e
     });
 
   }
