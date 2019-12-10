@@ -33,7 +33,7 @@ app.get('/:fileName', function (req, res, next){
     res.render('driver', {posts:postData});
   }
   else if(fileName == 'rider'){
-    res.render('rider');
+    res.render('rider', {posts:postData});
   }
   else{
     next();
