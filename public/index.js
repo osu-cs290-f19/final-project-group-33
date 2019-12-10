@@ -1,21 +1,37 @@
-var fs = require('fs');
 
 function insertNewPost(name, license, car, time, date, start, end, isDriver) {
   console.log("create new post");
-  var postHTML = Handlebars.templates.postTemplate({
-    name: name,
-    license: license,
-    car: car,
-    time: time,
-    date: date,
-    start: start,
-    end: end,
-    isDriver: isDriver
-  });
-  console.log(" ==postHTML", postHTML);
 
-  var postsContainer = document.getElementById('posts-container');
-  postsContainer.insertAdjacentHTML('beforeend', postHTML);
+
+  var name = document.getElementById('question-name').value.trim();
+  var license = document.getElementById('question-license').value.trim();
+  var car = document.getElementById('question-car').value.trim();
+  var phone = document.getElementById('question-phone').value.trim();
+  var time = document.getElementById('question-time').value.trim();
+  var date = document.getElementById('question-date').value.trim();
+  var start = document.getElementById('question-start').value.trim();
+  var end = document.getElementById('question-end').value.trim();
+
+  if (!name || !license || !car || !phone || !time || !date || !start || !end) {
+    alert("You must fill in all of the fields!");
+  } else {
+
+    var postHTML = Handlebars.templates.postTemplate({
+      name: name,
+      license: license,
+      car: car,
+      time: time,
+      date: date,
+      start: start,
+      end: end,
+      isDriver: isDriver
+    });
+    console.log(" ==postHTML", postHTML);
+
+    var postsContainer = document.getElementById('posts-container');
+    postsContainer.insertAdjacentHTML('beforeend', postHTML);
+
+  }
   // return postHTML;
 }
 
