@@ -1,58 +1,38 @@
 
 <main class='content'>
     <h2 class='header'>
-        Looking for riders
+        Looking for Drivers
     </h2>
-          <div class='questions-container'>
-            <div class="questions-input-container">
-              <label for="question-name" class="question-name-label">Name</label>
-              <div class="question-input-element">
-              <input type="text" name="question-name "class="question-input">
-              </div>
-            </div>
-            <div class="questions-input-container">
-              <label for="question-plate" class="question-plate-label">License plate #</label>
-              <div class="question-input-element">
-              <input type="text" name="question-plate "class="question-input">
-              </div>
-            </div>
-            <div class="questions-input-container">
-              <label for="question-plate" class="question-plate-label">Car Make</label>
-              <div class="question-input-element">
-              <input type="text" name="question-plate "class="question-input">
-              </div>
-            </div>
-            <div class="questions-input-container">
-              <label for="question-phone" class="question-phone-label">Phone #</label>
-              <div class="question-input-element">
-              <input type="text" name="question-phone "class="question-input">
-              </div>
-            </div>
-            <div class="questions-input-container">
-              <label for="question-time" class="question-time-label">Time</label>
-              <div class="question-input-element">
-              <input type="text" name="question-time "class="question-input">
-              </div>
-            </div>
-            <div class="questions-input-container">
-              <label for="question-date" class="question-date-label">Date</label>
-              <div class="question-input-element">
-              <input type="text" name="question-date "class="question-input">
-              </div>
-            </div>
-            <div class="questions-input-container">
-              <label for="question-start" class="question-start-label">Start Location</label>
-              <div class="question-input-element">
-              <input type="text" name="question-start "class="question-input">
-              </div>
-            </div>
-            <div class="questions-input-container">
-              <label for="question-end" class="question-end-label">End Location</label>
-              <div class="question-input-element">
-              <input type="text" name="question-end "class="question-input">
-              </div>
-            </div>
-          </div>
+
+    <aside class="filter-container">
+
+      <h2>Filters</h2>
+
+      <div class="filter-input-container">
+        <label for="filter-start" class="filter-input-label">Start Location</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-start" id="filter-start" class="filter-input">
+        </div>
+      </div>
+
+      <div class="filter-input-container">
+        <label for="filter-end" class="filter-input-label">Destination Location</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-end" id="filter-end" class="filter-input">
+        </div>
+      </div>
+
+      <div class="filter-input-container">
+        <label for="filter-date" class="filter-input-label">Date (day of month)</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-date" id="filter-date" class="filter-input">
+        </div>
+      </div>
+
+      <button id="filter-update-button" class="action-button">Update</button>
+
+    </aside>
+
 
           <h2 class="header">Posts</h2>
             <section id="posts-container">

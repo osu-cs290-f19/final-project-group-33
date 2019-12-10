@@ -35,12 +35,19 @@ function insertNewPost(name, license, car, time, date, start, end, isDriver) {
   // return postHTML;
 }
 
+function filter(){
+  console.log("filtering");
+}
+
 var createButton = document.getElementById('create');
 createButton.addEventListener('click', insertNewPost);
 
+var filterButton = document.getElementById('filter-update-button');
+filterButton.addEventListener('click', filter);
+
 function addPostToJSON(name, license, car, time, date, start, end, isDriver){
   var post = {"name": name, "license": license, "car":car, "time":time, "date":date, "start":start, "end":end, "isDriver":isDriver};
-  fs.appendFile("postData.json", post, function (err) {
+  fs.appendFile(" postData.json", post, function (err) {
   if (err) throw err;
   console.log('Updated!');
 });
