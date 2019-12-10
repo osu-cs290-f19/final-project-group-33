@@ -1,6 +1,7 @@
 var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
+var postData = require('./postData.json');
 
 var app = express();
 var port = 3712;
@@ -29,7 +30,7 @@ app.get('/:fileName', function (req, res, next){
     res.status(200).sendFile(__dirname + '/public/logo.jpg');
   }
   else if(fileName == 'driver'){
-    res.render('driver');
+    res.render('driver', {posts:postData});
   }
   else if(fileName == 'rider'){
     res.render('rider');
@@ -37,7 +38,7 @@ app.get('/:fileName', function (req, res, next){
   else{
     next();
   }
-  
+
 
 });
 
@@ -53,5 +54,3 @@ app.listen(port, function (err) {
     }
     console.log("== Server listening on port", port);
 });
-
-
