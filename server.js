@@ -25,13 +25,11 @@ app.get('/:fileName', function (req, res, next){
   var fileName = req.params.fileName.toLowerCase();
   console.log(fileName);
 
-  if(fileName == 'favicon.ico' || fileName == 'logo.jpg'){
+  if(fileName == 'favicon.ico'){
     res.status(200).sendFile(__dirname + '/public/logo.jpg');
   }
-  else if(fileName == 'style.css'){
-    res.status(200).sendFile(__dirname + '/public/style.css');
-}
-next();
+  
+  next();
 
 });
 
