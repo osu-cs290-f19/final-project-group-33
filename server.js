@@ -21,7 +21,7 @@ app.get('*', function (req, res, next){
 
 app.get('/', function (req, res, next){
   console.log("= main page");
-  res.render('driver');
+  res.render('menu');
 });
 
 app.get('/:fileName', function (req, res, next){
@@ -52,7 +52,7 @@ app.post('/driver/addPost', function(req, res, next){
         time: req.body.time,
         date: req.body.date,
         start: req.body.start,
-        req.body.end
+        end: req.body.end
       });
       console.log("== postData:", postData);
       fs.writeFile(
