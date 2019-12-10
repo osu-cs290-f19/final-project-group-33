@@ -103,9 +103,9 @@ function filter() {
    * Remove all "post" elements from the DOM.
    */
   console.log(allPosts);
-  var postContainer = document.getElementsByClassName('post-container');
-  while(postContainer[0].lastChild) {
-    postContainer[0].removeChild(postContainer[0].lastChild);
+  var postContainer = document.getElementById('posts-container');
+  while(postContainer.lastChild) {
+    postContainer.removeChild(postContainer.lastChild);
     console.log("removing");
   }
 
