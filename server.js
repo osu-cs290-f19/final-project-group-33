@@ -58,7 +58,7 @@ app.post('/driver/addPost', function(req, res, next){
       console.log("== postData:", postData);
       fs.writeFile(
         __dirname + '/postData.json',
-        JSON.stringify(postData, 2, null),
+        JSON.stringify(postData, null, " "),
         function (err) {
           if (!err) {
             res.status(200).send();
