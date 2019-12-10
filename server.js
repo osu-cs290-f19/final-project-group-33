@@ -34,8 +34,10 @@ app.get('/:fileName', function (req, res, next){
   else if(fileName == 'rider'){
     res.render('rider');
   }
+  else{
+    next();
+  }
   
-  next();
 
 });
 
