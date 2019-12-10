@@ -14,7 +14,7 @@
   "scripts": {
     "start": "node server.js",
     "create": "handlebars -f public/postTemplate.js views/partials/postTemplate.handlebars",
-    "prestart": "npm run create",
+    "prestart": "npm run create && hostname",
     "build": "npm install --save express && npm install --save handlebars && npm install --save express-handlebars"
   },
   "repository": {
