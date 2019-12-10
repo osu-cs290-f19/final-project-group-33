@@ -1,4 +1,32 @@
-allPosts = [{name:"dd", license: "sdd", car: "sdd", time: "sd", date: "5", start: "corvallis", end: "portland"}];
+
+allPosts = [];
+
+function generatePosts(){
+  console.log("hello");
+  var nameData = document.getElementsByClassName('Name');
+  var licenseData = document.getElementsByClassName('License');
+  var carData = document.getElementsByClassName('Car');
+  var timeData = document.getElementsByClassName('Time');
+  var dateData = document.getElementsByClassName('Date');
+  var startData = document.getElementsByClassName('Start Location');
+  var endData = document.getElementsByClassName('Destination Location');
+
+  for (i=0; i < nameData.length; i++){
+    allPosts.push({
+      name: nameData[i].textContent,
+      license: licenseData[i].textContent,
+      car: carData[i].textContent,
+      time: timeData[i].textContent,
+      date: dateData[i].textContent,
+      start: startData[i].textContent,
+      end: endData[i].textContent
+    });
+
+  }
+  console.log(allPosts);
+}
+generatePosts();
+
 function insertNewPost(name, license, car, time, date, start, end) {
   console.log("create new post");
 
