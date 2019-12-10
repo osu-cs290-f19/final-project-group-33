@@ -187,7 +187,7 @@ function passFilter(post, filters){
   if (filters.end) {
     var postEnd= post.end.toLowerCase();
     var filterEnd = filters.end.toLowerCase();
-    if (postStart.indexOf(filterEnd) === -1) {
+    if (postEnd.indexOf(filterEnd) === -1) {
       console.log("false");
 
       return false;
