@@ -3,9 +3,10 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var postData = require('./postData.json');
 var bodyParse = require('body-parser');
+var fs = require('fs');
 
 var app = express();
-var port = 3712;
+var port = 3713;
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');

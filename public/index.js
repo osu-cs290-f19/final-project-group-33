@@ -15,31 +15,55 @@ function insertNewPost(name, license, car, time, date, start, end) {
   if (!name || !license || !car || !phone || !time || !date || !start || !end) {
     alert("You must fill in all of the fields!");
   } else {
+        var postRequest = new XMLHttpRequest();
+        var requestURL = '/driver/addPost';
+        postRequest.open('POST', requestURL);
 
-    var postHTML = Handlebars.templates.postTemplate({
-      name: name,
-      license: license,
-      car: car,
-      time: time,
-      date: date,
-      start: start,
-      end: end,
-    });
-    console.log(" ==postHTML", postHTML);
+        var requestBody = JSON.stringify({
+          name: name,
+          license: license,
+          car: car,
+          phone: phone,
+          time: time,
+          date: date,
+          start: start,
+          end: end
+        });
+        console.log("hello");
+        console.log("== requestBody:", requestBody);
+        postRequest.setRequestHeader('Content-Type', 'application/json');
 
-    allPosts.push({
-      name: name,
-      license: license,
-      car: car,
-      time: time,
-      date: date,
-      start: start,
-      end: end,
-    })
+        postRequest.addEventListener('load', function (event) {
+          if (event.target.status !== 200) {
+            var responseBody = event.target.response;
+            alert("Error saving post on server side: " + responseBody);
+          } else {
+            var postHTML = Handlebars.templates.postTemplate({
+              name: name,
+              license: license,
+              car: car,
+              time: time,
+              date: date,
+              start: start,
+              end: end
+            });
+            console.log(" ==postHTML", postHTML);
 
-    var postsContainer = document.getElementById('posts-container');
-    postsContainer.insertAdjacentHTML('beforeend', postHTML);
+            allPosts.push({
+              name: name,
+              license: license,
+              car: car,
+              time: time,
+              date: date,
+              start: start,
+              end: end
+            })
 
+            var postsContainer = document.getElementById('posts-container');
+            postsContainer.insertAdjacentHTML('beforeend', postHTML);
+          }
+        });
+        postRequest.send(requestBody);
   }
   // return postHTML;
 }
@@ -54,7 +78,7 @@ function insertNewPost2(name, license, car, time, date, start, end) {
       time: time,
       date: date,
       start: start,
-      end: end,
+      end: end
     });
     console.log(" ==postHTML", postHTML);
 
