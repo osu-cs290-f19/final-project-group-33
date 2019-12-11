@@ -74,7 +74,13 @@ app.post('/driver/addPost', function(req, res, next){
 })
 app.post('/driver/deletePost', function(req, res, next){
     if (req.body && req.body.index) {
-      postData.splice(req.body.index, 1);
+      var index = parseInt(req.body.index);
+      if(index == 0){
+        postData.shift()
+      }
+      else{
+        postData.splice(index, 1);
+      }
       console.log("== postData:", postData);
       fs.writeFile(
         __dirname + '/postData.json',
