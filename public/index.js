@@ -226,6 +226,18 @@ for (i=0; i<deleteButton.length; i++){
       if (v.getElementsByClassName("License")[0].dataset.l == allPosts[j].license){
         console.log("DASD");
         allPosts.splice(j, 1);
+        var postRequest = new XMLHttpRequest();
+        var requestURL = '/driver/deletePost';
+        postRequest.open('POST', requestURL);
+        var z = j.toString()
+        var requestBody = JSON.stringify({
+          index: z
+        });
+        console.log(requestBody);
+        postRequest.setRequestHeader('Content-Type', 'application/json');
+        postRequest.send(requestBody);
+
+
         deleteButton = document.getElementsByClassName('delete-button');
       }
     }
