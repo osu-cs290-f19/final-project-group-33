@@ -221,11 +221,11 @@ for (i=0; i<deleteButton.length; i++){
   deleteButton[i].addEventListener('click', function(e){
     v = e.currentTarget.parentNode.parentNode;
     console.log(allPosts);
-    for (i=0; i<allPosts.length; i++){
-      console.log(allPosts[i].license);
-      if (v.getElementsByClassName("License")[0].dataset.l == allPosts[i].license){
+    for (j=0; j<allPosts.length; j++){
+      console.log(allPosts[j].license);
+      if (v.getElementsByClassName("License")[0].dataset.l == allPosts[j].license){
         console.log("DASD");
-        allPosts.splice(i, 1);
+        allPosts.splice(j, 1);
         deleteButton = document.getElementsByClassName('delete-button');
       }
     }
