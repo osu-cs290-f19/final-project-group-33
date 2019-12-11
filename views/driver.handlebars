@@ -1,85 +1,87 @@
-<main class = "content">
-  <h2 class = "header">
+<h2 class="header">
 
-    Looking for Rider
+  Looking for Rider
 
-  </h2>
-  <div class = "create-a-post">
+</h2>
+<div class="create-a-post">
 
-    <div class = "questions-container">
-      <div class = "first-row">
-      <div class = "questions-input-container">
-        <label for="question-name" class = "question-name-label"> Name </label>
+  <div class="questions-container">
+    <div class="first-row">
+      <div class="questions-input-container">
+        <label for="question-name" class="question-name-label"> Name </label>
         <div class="question-input-element">
           <input type="text" name="question-name" id="question-name" class="question-input">
         </div>
       </div>
 
-      <div class = "questions-input-container">
-        <label for="question-phone" class = "question-phone-label"> Phone # </label>
+      <div class="questions-input-container">
+        <label for="question-phone" class="question-phone-label"> Phone # </label>
         <div class="question-input-element">
           <input type="text" name="question-phone" id="question-phone" class="question-input">
         </div>
       </div>
 
-    <div class = "questions-input-container">
-      <label for="question-time" class = "question-time-label"> Time </label>
-      <div class="question-input-element">
-        <input type="text" time="question-time" id="question-time" class="question-input">
+      <div class="questions-input-container">
+        <label for="question-time" class="question-time-label"> Time </label>
+        <div class="question-input-element">
+          <input type="text" time="question-time" id="question-time" class="question-input">
+        </div>
       </div>
-    </div>
 
-    <div class = "questions-input-container">
-      <label for="question-date" class = "question-date-label"> Date </label>
-      <div class="question-input-element">
-        <input type="text" name="question-date" id="question-date" class="question-input">
+      <div class="questions-input-container">
+        <label for="question-date" class="question-date-label"> Date </label>
+        <div class="question-input-element">
+          <input type="text" name="question-date" id="question-date" class="question-input">
+        </div>
       </div>
-    </div>
 
-  </div>
+    </div>
 
     <div class="second-row">
       <div class="questions-input-container">
         <label for="question-license" class="question-license-label">License plate #</label>
         <div class="question-input-element">
-        <input type="text" name="question-license" id = "question-license" class="question-input">
+          <input type="text" name="question-license" id="question-license" class="question-input">
         </div>
       </div>
       <div class="questions-input-container">
         <label for="question-car" class="question-car">Car Make</label>
         <div class="question-input-element">
-        <input type="text" name="question-car" id="question-car" class="question-input">
+          <input type="text" name="question-car" id="question-car" class="question-input">
         </div>
       </div>
     </div>
 
-      <div class = "questions-input-container">
-        <label for="question-start" class = "question-start-label"> Start Location </label>
-        <div class="question-input-element">
-          <input type="text" name="question-start" id="question-start" class="question-input">
-        </div>
+    <div class="questions-input-container">
+      <label for="question-start" class="question-start-label"> Start Location </label>
+      <div class="question-input-element">
+        <input type="text" name="question-start" id="question-start" class="question-input">
       </div>
-
-      <div class = "questions-input-container">
-        <label for="question-end" class = "question-end-label"> End Location </label>
-        <div class="question-input-element">
-          <input type="text" name="question-end" id="question-end" class="question-input">
-        </div>
-      </div>
-
     </div>
 
-    <div class="create-button">
-      <button type="button" id="create" class="action-button">Create Post</button>
+    <div class="questions-input-container">
+      <label for="question-end" class="question-end-label"> End Location </label>
+      <div class="question-input-element">
+        <input type="text" name="question-end" id="question-end" class="question-input">
+      </div>
     </div>
 
   </div>
 
-  <h2 class="header">Posts</h2>
-    <section id="posts-container">
-      {{#each posts}}
-      {{> postTemplate}}
+  <div class="create-button">
+    <button type="button" id="create" class="action-button">Create Post</button>
+  </div>
+
+</div>
+
+<h2 class="header">Posts</h2>
+
+<main class="content">
+
+  <section id="posts-container">
+    {{#each posts}}
+    {{> postTemplate}}
     {{/each}}
-    </section>
+  </section>
 
 </main>

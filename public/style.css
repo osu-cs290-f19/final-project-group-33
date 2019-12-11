@@ -198,12 +198,12 @@ h2.header{
 
 .content{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   justify-content: flex-start;
 }
 
 #posts-container{
-  width: 75%;
+  width: auto;
   align-self: flex-end;
   display: inline-flex;
   flex-wrap: wrap;
