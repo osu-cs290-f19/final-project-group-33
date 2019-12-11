@@ -171,6 +171,13 @@ function filter() {
       insertNewPost2(post.name, post.license, post.car, post.time, post.date, post.start, post.end);
     }
   });
+
+  var deleteButton = document.getElementsByClassName('delete-button');
+  for (i=0; i<deleteButton.length; i++){
+    deleteButton[i].addEventListener('click', function(e){
+      e.currentTarget.parentNode.parentNode.remove();
+    });
+  }
 }
 
 function passFilter(post, filters){
@@ -196,9 +203,9 @@ function passFilter(post, filters){
   }
 
   if (filters.date) {
-    var postDate = Number(post.date);
-    var filterDate = Number(filters.date);
-    if (postDate != filterDate) {
+    var postDate = post.date.toLowerCase();
+    var filterDate = filters.date.toLowerCase();
+    if (postDate.indexOf(filterDate) === -1) {
       console.log("false");
 
       return false;
@@ -211,7 +218,20 @@ function passFilter(post, filters){
 
 var deleteButton = document.getElementsByClassName('delete-button');
 for (i=0; i<deleteButton.length; i++){
-  deleteButton[i].addEventListener('click', function(e){e.currentTarget.parentNode.parentNode.remove();});
+  deleteButton[i].addEventListener('click', function(e){
+    v = e.currentTarget.parentNode.parentNode;
+    console.log(allPosts);
+    for (j=0; j<allPosts.length; j++){
+      console.log(allPosts[j].license);
+      if (v.getElementsByClassName("License")[0].dataset.l == allPosts[j].license){
+        console.log("DASD");
+        allPosts.splice(j, 1);
+        deleteButton = document.getElementsByClassName('delete-button');
+      }
+    }
+    console.log(allPosts);
+    v.remove();
+  });
 }
 
 var createButton = document.getElementById('create');
