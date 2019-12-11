@@ -96,7 +96,6 @@ function insertNewPost(name, license, car, time, date, start, end) {
         });
         postRequest.send(requestBody);
   }
-  // return postHTML;
 }
 
 function insertNewPost2(name, license, car, time, date, start, end) {
@@ -118,31 +117,8 @@ function insertNewPost2(name, license, car, time, date, start, end) {
 
 }
 
-// function filter(event){
-//   console.log("filtering");
-//   var startFilter = document.getElementById('filter-start').value.toLowerCase();
-//   var endFilter = document.getElementById('filter-end').value.toLowerCase();
-//   var dateFilter = document.getElementById('filter-date').value;
-//
-//   console.log(startFilter, endFilter, dateFilter);
-//
-//
-//   // var posts = document.getElementsByClassName('post-container');
-//   var postStart = document.getElementsByClassName('Start Location');
-//   var postEnd = document.getElementsByClassName('Destination Location');
-//   var postDate = document.getElementsByClassName('Date');
-//   // var postsData = posts.getElementsByClassName('post');
-//
-//   // console.log(posts);
-//   console.log(postStart[0].dataset.start);
-//
-// }
-
 function filter() {
 
-  /*
-   * Grab values of filters from user inputs.
-   */
    console.log("filtering")
   var filters = {
     start: document.getElementById('filter-start').value,
@@ -151,10 +127,6 @@ function filter() {
   }
 
   console.log(filters);
-
-  /*
-   * Remove all "post" elements from the DOM.
-   */
   console.log(allPosts);
   var postContainer = document.getElementById('posts-container');
   while(postContainer.lastChild) {
@@ -162,10 +134,6 @@ function filter() {
     console.log("removing");
   }
 
-  /*
-   * Loop through the collection of all "post" elements and re-insert ones
-   * that meet the current filtering criteria.
-   */
   allPosts.forEach(function (post) {
     if (passFilter(post, filters)) {
       insertNewPost2(post.name, post.license, post.car, post.time, post.date, post.start, post.end);
