@@ -170,3 +170,38 @@ h3{
   display: inherit;
   width: 100%;
 }
+
+h2.header{
+  background-color: #fff;
+  height: 100px;
+  margin: 0px;
+  padding: 20px;
+}
+
+.content aside{
+  width: 200px;
+  padding: 10px;
+}
+
+.content h2{
+  width: 100%;
+}
+
+.content aside h2{
+  margin: 10px;
+  font-size: 35px;;
+}
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#posts-container{
+  width: 75%;
+  align-self: flex-end;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
