@@ -72,6 +72,26 @@ app.post('/driver/addPost', function(req, res, next){
     }
 
 })
+app.post('/driver/deletePost', function(req, res, next){
+    if (req.body && req.body.index) {
+      postData.splice(req.body.index, 1);
+      console.log("== postData:", postData);
+      fs.writeFile(
+        __dirname + '/postData.json',
+        JSON.stringify(postData, null, " "),
+        function (err) {
+          if (!err) {
+            res.status(200).send();
+          } else {
+            res.status(500).send("Failed to write data on server side.");
+          }
+        }
+      );
+    } else {
+      res.status(400).send("Request body is missing values.");
+    }
+
+})
 app.get('*', function (req, res, next){
   console.log("404");
   res.status(404).render('404', {path : req.url});
